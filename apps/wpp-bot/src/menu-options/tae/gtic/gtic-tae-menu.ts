@@ -1,20 +1,54 @@
 import { MenuOptions } from '../../interface'
 
 // Menu available for GTIC TAE
-export const GTIC_TAE: MenuOptions = {
+export const GTIC: MenuOptions = {
+  className: 'GTIC',
   message: "No que a GTIC poderia te ajudar?",
-  1: "ABRIR CHAMADO",
-  2: "CONFIGURAR UFPB SEM FIOS",
-  3: "RESERVAR UM LABORATÓRIO",
+  1: "ACESSO A INTERNET",
+  //2: "EMAIL ZIMBRA",
+  //3: "RESERVAR UM LABORATÓRIO",
 }
 
+export const INTERNET_ACCESS_GTIC: MenuOptions = {
+  className: 'INTERNET_ACCESS_GTIC',
+  message: "Em qual tipo de conexão a GTIC pode te ajudar?",
+  1: "CONECTAR A UFPB SEM FIOS",
+  2: "FALHA EM INTERNET CABEADA",
+  3: "FALHA EM INTERNET WIFI",
+}
+
+export const BLOCK_FAILURE_INTERNET_ACCESS: MenuOptions = {
+  className: 'BLOCK_FAILURE_INTERNET_ACCESS',
+  message: "Em qual bloco ocorre a falha?"
+}
+
+export const HALL_FAILURE_INTERNET_ACCESS: MenuOptions = {
+  className: 'HALL_FAILURE_INTERNET_ACCESS',
+  message: "Em qual sala ocorre a falha?"
+}
+
+export const MORE_DETAILS_FAILURE_INTERNET_ACCESS: MenuOptions = {
+  className: 'MORE_DETAILS_FAILURE_INTERNET_ACCESS',
+  message: "Você poderia fornecer mais detalhes sobre a falha?"
+}
+export const ANSWERS_FAILURE_INTERNET_ACCESS_GTIC_TAE_: MenuOptions = {
+  1: "Tudo certo! Nós registramos o seu chamado Obrigado!"
+}
+
+enum SO {
+  ANDROID = "1",
+  LINUX = "2",
+  WINDOWS = "3",
+  MACOS = "4"
+
+}
 // When user select "CONFIGURAR UFPB SEM FIOS"
-export const SETUP_WIFI_GTIC_TAE: MenuOptions = {
+export const SETUP_WIFI_INTERNET_ACCESS_GTIC_TAE: MenuOptions = {
   message: 'Qual o sistema que você gostaria de suporte?',
-  1: "ANDROID",
-  2: "LINUX",
-  3: "WINDOWS",
-  4: "MACOS/iOS",
+  [SO.ANDROID]: "ANDROID",
+  [SO.LINUX]: "LINUX",
+  [SO.WINDOWS]: "WINDOWS",
+  [SO.MACOS]: "MACOS/iOS",
 }
 
 const ANSWER_ANDROID = `SIGA ESTES PASSOS PARA REALIZAR SUA CONFIGURAÇÃO DE INTERNET NO ANDROID
@@ -56,8 +90,8 @@ const ANSWER_MACOS = `SIGA ESTES PASSOS PARA REALIZAR SUA CONFIGURAÇÃO DE INTE
 *4*: Conectar!`
 
 export const ANSWER_SETUP_WIFI_GTIC_TAE: MenuOptions = {
-  1: ANSWER_ANDROID,
-  2: ANSWER_LINUX,
-  3: ANSWER_WINDOWS,
-  4: ANSWER_MACOS
+  [SO.ANDROID]: ANSWER_ANDROID,
+  [SO.LINUX]: ANSWER_LINUX,
+  [SO.WINDOWS]: ANSWER_WINDOWS,
+  [SO.MACOS]: ANSWER_MACOS
 }

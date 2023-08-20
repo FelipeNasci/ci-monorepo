@@ -3,9 +3,13 @@ import { MenuOptions } from '../interface'
 const menuMessage = `Olá, bem-vindo.
 Com qual setor você gostaria de falar?`
 
-export const TAE_MENU_OPTIONS: MenuOptions = {
+export enum Choice {
+  GTIC =  "1",
+  ASSESSORIA_ADMINISTRATIVA = "2",
+  SUBPREFEITRA =  "3",
+}
+
+export const ENTRYPOINT_MENU_OPTIONS: MenuOptions = {
   message: menuMessage,
-  1: 'GTIC',
-  2: 'ASSESSORIA ADMINISTRATIVA',
-  3: 'SUBPREFEITRA',
+  [Choice.GTIC]: 'GTIC',
 };
