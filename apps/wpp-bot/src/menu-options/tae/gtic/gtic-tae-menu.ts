@@ -35,12 +35,11 @@ export const ANSWERS_FAILURE_INTERNET_ACCESS_GTIC_TAE_: MenuOptions = {
   1: "Tudo certo! Nós registramos o seu chamado Obrigado!"
 }
 
-enum SO {
+export enum SO {
   ANDROID = "1",
   LINUX = "2",
   WINDOWS = "3",
   MACOS = "4"
-
 }
 // When user select "CONFIGURAR UFPB SEM FIOS"
 export const SETUP_WIFI_INTERNET_ACCESS_GTIC_TAE: MenuOptions = {
