@@ -11,38 +11,36 @@ export const generateMenu = ({ message, ...flow }: MenuOptions) => {
   return `${message || ''}\n${options}`.trim()
 }
 
-export const inputFlow = (className: string, response: string) => {
+export const processInput = (className: string, input: string) => {
   switch (className) {
     case GTIC.className:
-      if (response === '1')
+      if (input === '1')
         return { servico: 'internet', sendTo: 'suporte@ccae.ufpb.br' }
 
     case INTERNET_ACCESS_GTIC.className:
-      if (response === '2')
-        return { tipoConexao: 'cabo', tipoServico: 'cabo' }
-      else if (response === '3')
-        return { tipoConexao: 'wifi', tipoServico: 'wifi' }
+      const option = { '2': 'cabo', '3': 'wifi' }
+      return { tipoConexao: option[input], tipoServico: option[input] }
 
     case BLOCK_FAILURE_INTERNET_ACCESS.className:
-      return { bloco: response };
+      return { bloco: input };
 
     case HALL_FAILURE_INTERNET_ACCESS.className:
-      return { sala: response };
+      return { sala: input };
 
     case MORE_DETAILS_FAILURE_INTERNET_ACCESS.className:
-      return { descricao: response };
+      return { descricao: input };
 
     case COMPLETE_NAME.className:
-      return { name: response };
+      return { name: input };
 
     case BOND_TYPE.className:
-      return { tipo: BOND_TYPE[response] };
+      return { tipo: BOND_TYPE[input] };
 
     case UNIT.className:
-      return { unidade: UNIT[response] }
+      return { unidade: UNIT[input] }
 
     case EMAIL.className:
-      return { email: response };
+      return { email: input };
 
     default:
       return {};
