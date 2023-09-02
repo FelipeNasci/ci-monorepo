@@ -1,55 +1,69 @@
 import { MenuOptions } from "../menu-options/interface";
-import { BOND_TYPE, COMPLETE_NAME, UNIT, EMAIL } from '../menu-options/sign-up/user'
-import { GTIC, INTERNET_ACCESS_GTIC, BLOCK_FAILURE_INTERNET_ACCESS, HALL_FAILURE_INTERNET_ACCESS, MORE_DETAILS_FAILURE_INTERNET_ACCESS } from '../menu-options/tae/gtic'
+import {
+  BOND_TYPE,
+  COMPLETE_NAME,
+  UNIT,
+  EMAIL,
+} from "../menu-options/sign-up/user";
+import {
+  GTIC,
+  INTERNET_ACCESS_GTIC,
+  BLOCK_FAILURE_INTERNET_ACCESS,
+  HALL_FAILURE_INTERNET_ACCESS,
+  MORE_DETAILS_FAILURE_INTERNET_ACCESS,
+} from "../menu-options/tae/gtic";
 export const generateMenu = ({ message, ...flow }: MenuOptions) => {
-  const bkp = { ...flow }
+  const bkp = { ...flow };
 
-  delete bkp.className
+  delete bkp.className;
   const options = Object.entries(bkp)
     .map(([key, value]) => `${key} - ${value}`)
-    .join('\n');
-  return `${message || ''}\n${options}`.trim()
-}
+    .join("\n");
+  return `${message || ""}\n${options}`.trim();
+};
+
+const getClassName = ({ className }: MenuOptions) => className;
 
 export const processInput = (className: string, input: string) => {
   switch (className) {
-    case GTIC.className:
-      if (input === '1')
-        return { servico: 'internet', sendTo: 'suporte@ccae.ufpb.br' }
+    case getClassName(GTIC):
+      if (input === "1")
+        return { servico: "internet", sendTo: "suporte@ccae.ufpb.br" };
 
-    case INTERNET_ACCESS_GTIC.className:
-      const option = { '2': 'cabo', '3': 'wifi' }
-      return { tipoConexao: option[input], tipoServico: option[input] }
+    case getClassName(INTERNET_ACCESS_GTIC):
+      const option = { "2": "cabo", "3": "wifi" };
+      return { tipoConexao: option[input], tipoServico: option[input] };
 
-    case BLOCK_FAILURE_INTERNET_ACCESS.className:
+    case getClassName(BLOCK_FAILURE_INTERNET_ACCESS):
       return { bloco: input };
 
-    case HALL_FAILURE_INTERNET_ACCESS.className:
+    case getClassName(HALL_FAILURE_INTERNET_ACCESS):
       return { sala: input };
 
-    case MORE_DETAILS_FAILURE_INTERNET_ACCESS.className:
+    case getClassName(MORE_DETAILS_FAILURE_INTERNET_ACCESS):
       return { descricao: input };
 
-    case COMPLETE_NAME.className:
+    case getClassName(COMPLETE_NAME):
       return { name: input };
 
-    case BOND_TYPE.className:
+    case getClassName(BOND_TYPE):
       return { tipo: BOND_TYPE[input] };
 
-    case UNIT.className:
-      return { unidade: UNIT[input] }
+    case getClassName(UNIT):
+      return { unidade: UNIT[input] };
 
-    case EMAIL.className:
+    case getClassName(EMAIL):
       return { email: input };
 
     default:
       return {};
   }
-}
+};
 
-export const isLoggedArea = (className: string) => ([
-  'INTERNET_ACCESS_GTIC',
-  'BLOCK_FAILURE_INTERNET_ACCESS',
-  'HALL_FAILURE_INTERNET_ACCESS',
-  'MORE_DETAILS_FAILURE_INTERNET_ACCESS'
-].some((item) => item === className))
+export const isLoggedArea = (className: string) =>
+  [
+    "INTERNET_ACCESS_GTIC",
+    "BLOCK_FAILURE_INTERNET_ACCESS",
+    "HALL_FAILURE_INTERNET_ACCESS",
+    "MORE_DETAILS_FAILURE_INTERNET_ACCESS",
+  ].some((item) => item === className);
