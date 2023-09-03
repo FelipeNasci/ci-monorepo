@@ -1,4 +1,4 @@
-import { FullNameState } from "./states/register";
+import { FullNameState } from "./states/sign-up";
 import { State } from "./states/interface";
 import { generateMenu, processInput } from "./utils";
 import { sendEmail } from "./services/email";

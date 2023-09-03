@@ -10,7 +10,7 @@ import {
 
 export const FailureInternetBlockState: State = {
   menu: BLOCK_FAILURE_INTERNET_ACCESS,
-  next: () => FailureInternetMoreDetailsState,
+  next: () => FailureInternetHallState,
 };
 
 export const FailureInternetHallState: State = {

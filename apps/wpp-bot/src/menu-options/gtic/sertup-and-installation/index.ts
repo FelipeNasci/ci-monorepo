@@ -1,8 +1,8 @@
 import { MenuOptions } from "../../interface";
 
 export enum ESetupAndInstallationKind {
-  Software =  1,
-  Devices = 2,
+  Software = "1",
+  Devices = "2",
 }
 
 export const SETUP_KIND: MenuOptions = {
@@ -15,21 +15,20 @@ export const SETUP_KIND: MenuOptions = {
 
 export const SETUP_EQUIPMENT_ID: MenuOptions = {
   className: "SETUP_EQUIPMENT_ID",
-  message: "Por favor informe o número de tombamento do equipamento",
+  message: "Por favor, informe o número de tombamento do equipamento",
 };
 
 export const SETUP_EQUIPMENT_BLOCK_LOCATION: MenuOptions = {
   className: "SETUP_EQUIPMENT_BLOCK_LOCATION",
-  message: "Por favor informe em qual bloco está o equipamento",
+  message: "Por favor, informe em qual bloco está o equipamento",
 };
 
 export const SETUP_EQUIPMENT_HALL_LOCATION: MenuOptions = {
   className: "SETUP_EQUIPMENT_HALL_LOCATION",
-  message: "Por favor informe em qual sala está o equipamento",
+  message: "Por favor, informe em qual sala está o equipamento",
 };
 
 export const SETUP_EQUIPMENT_MORE_DETAILS: MenuOptions = {
   className: "SETUP_EQUIPMENT_MORE_DETAILS",
-  message:
-    "Por favor insira informações adicionais sobre o problema",
+  message: "Por favor, insira informações adicionais sobre o problema",
 };

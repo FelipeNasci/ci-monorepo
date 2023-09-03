@@ -6,26 +6,23 @@ import {
   ELocation,
   EUserType,
   EMAIL,
-} from "../../menu-options/sign-up/user";
-import { TAE_INITIAL_MENU_STATE } from "../entrypoint-state/initial-menu";
+} from "../../menu-options/sign-up";
+import { InitialMenuState } from "../entrypoint-state";
+import { getValuesFromObject } from "../../utils";
 
 export const FullNameState: State = {
   menu: FULL_NAME,
   next: () => UserTypeState,
 };
 
-const usersType: string[] = Object.entries(EUserType).map(
-  ([_, value]) => value
-);
+const usersType = getValuesFromObject<string>(EUserType);
 
 export const UserTypeState: State = {
   menu: USER_TYPE,
   next: (choice) => usersType.includes(choice) && LocationState,
 };
 
-const locations: string[] = Object.entries(ELocation).map(
-  ([_, value]) => value
-);
+const locations = getValuesFromObject<string>(ELocation);
 
 export const LocationState: State = {
   menu: LOCATION,
@@ -34,5 +31,5 @@ export const LocationState: State = {
 
 export const EmailState: State = {
   menu: EMAIL,
-  next: () => TAE_INITIAL_MENU_STATE,
+  next: () => InitialMenuState,
 };

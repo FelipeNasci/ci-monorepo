@@ -4,13 +4,19 @@ import {
   SETUP_EQUIPMENT_BLOCK_LOCATION,
   SETUP_EQUIPMENT_HALL_LOCATION,
   SETUP_EQUIPMENT_MORE_DETAILS,
+  ESetupAndInstallationKind,
 } from "../../../menu-options/gtic/sertup-and-installation";
 import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
+import { getValuesFromObject } from "../../../utils";
 import type { State } from "../../interface";
+
+const installationsKind = getValuesFromObject<string>(
+  ESetupAndInstallationKind
+);
 
 export const SetupKindState: State = {
   menu: SETUP_KIND,
-  next: () => SetupEquipmentIDState,
+  next: (choice) => installationsKind.includes(choice) && SetupEquipmentIDState,
 };
 
 export const SetupEquipmentIDState: State = {

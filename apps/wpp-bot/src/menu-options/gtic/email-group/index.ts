@@ -1,10 +1,10 @@
 import { MenuOptions } from "../../interface";
 
 export enum EEmailGroupKind {
-  Tae =  1,
-  Professor = 2,
-  CenterCouncil = 3,
-  Council = 4,
+  Tae =  "1",
+  Professor = "2",
+  CenterCouncil = "3",
+  Council = "4",
 }
 
 export const EMAIL_GROUP_KIND: MenuOptions = {
@@ -19,5 +19,5 @@ export const EMAIL_GROUP_KIND: MenuOptions = {
 export const EMAIL_GROUP_MORE_DETAILS: MenuOptions = {
   className: "EMAIL_GROUP_MORE_DETAILS",
   message:
-    "Por favor insira informações pertinentes a sua solicitação como: Email institucional ao qual você deseja suporte; Matrícula etc.",
+    "Por favor, insira informações pertinentes a sua solicitação como: Email institucional ao qual você deseja suporte; Matrícula etc.",
 };

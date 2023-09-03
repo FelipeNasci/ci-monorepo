@@ -1,17 +1,36 @@
 import { MenuOptions } from "../menu-options/interface";
+import { USER_TYPE, FULL_NAME, LOCATION, EMAIL } from "../menu-options/sign-up";
+
+import { GTIC } from "../menu-options/gtic";
+import { INTERNET_ACCESS_KIND } from "../menu-options/gtic/internet";
 import {
-  USER_TYPE,
-  FULL_NAME,
-  LOCATION,
-  EMAIL,
-} from "../menu-options/sign-up/user";
-import {
-  GTIC,
-  INTERNET_ACCESS_GTIC,
   BLOCK_FAILURE_INTERNET_ACCESS,
   HALL_FAILURE_INTERNET_ACCESS,
   MORE_DETAILS_FAILURE_INTERNET_ACCESS,
-} from "../menu-options/tae/gtic";
+} from "../menu-options/gtic/internet/failure";
+
+import { ZIMBRA_KIND_SERVICE } from "../menu-options/gtic/email-zimbra";
+import {
+  EMAIL_GROUP_KIND,
+  EMAIL_GROUP_MORE_DETAILS,
+} from "../menu-options/gtic/email-group";
+
+import {
+  EQUIPMENT_BLOCK_LOCATION,
+  EQUIPMENT_HALL_LOCATION,
+  EQUIPMENT_ID,
+  EQUIPMENT_MAINTENANCE_KIND,
+  EQUIPMENT_MORE_DETAILS,
+} from "../menu-options/gtic/equipment-maintenance";
+
+import {
+  SETUP_EQUIPMENT_BLOCK_LOCATION,
+  SETUP_EQUIPMENT_HALL_LOCATION,
+  SETUP_EQUIPMENT_ID,
+  SETUP_KIND,
+  SETUP_EQUIPMENT_MORE_DETAILS,
+} from "../menu-options/gtic/sertup-and-installation";
+
 export const generateMenu = ({ message, ...flow }: MenuOptions) => {
   const bkp = { ...flow };
 
@@ -24,13 +43,17 @@ export const generateMenu = ({ message, ...flow }: MenuOptions) => {
 
 const getClassName = ({ className }: MenuOptions) => className;
 
+export const getValuesFromObject = <ValueType = any>(object: object): ValueType[] =>
+  Object.entries(object).map(([_, value]) => value);
+  
+
 export const processInput = (className: string, input: string) => {
   switch (className) {
     case getClassName(GTIC):
-      if (input === "1")
-        return { servico: "internet", sendTo: "suporte@ccae.ufpb.br" };
+      const servico = GTIC[input];
+      return { servico, sendTo: "suporte@ccae.ufpb.br" };
 
-    case getClassName(INTERNET_ACCESS_GTIC):
+    case getClassName(INTERNET_ACCESS_KIND):
       const option = { "2": "cabo", "3": "wifi" };
       return { tipoConexao: option[input], tipoServico: option[input] };
 
@@ -54,6 +77,45 @@ export const processInput = (className: string, input: string) => {
 
     case getClassName(EMAIL):
       return { email: input };
+
+    case getClassName(ZIMBRA_KIND_SERVICE):
+      return { tipoServico: ZIMBRA_KIND_SERVICE[input] };
+
+    case getClassName(EMAIL_GROUP_KIND):
+      return { tipoServico: ZIMBRA_KIND_SERVICE[input] };
+
+    case getClassName(EMAIL_GROUP_MORE_DETAILS):
+      return { descricao: input };
+
+    case getClassName(EQUIPMENT_MAINTENANCE_KIND):
+      return { tipoServico: ZIMBRA_KIND_SERVICE[input] };
+
+    case getClassName(EQUIPMENT_ID):
+      return { tombamento: input };
+
+    case getClassName(EQUIPMENT_BLOCK_LOCATION):
+      return { bloco: input };
+
+    case getClassName(EQUIPMENT_HALL_LOCATION):
+      return { sala: input };
+
+    case getClassName(EQUIPMENT_MORE_DETAILS):
+      return { descricao: input };
+
+    case getClassName(SETUP_KIND):
+      return { tipoServico: ZIMBRA_KIND_SERVICE[input] };
+
+    case getClassName(SETUP_EQUIPMENT_ID):
+      return { tombamento: input };
+
+    case getClassName(SETUP_EQUIPMENT_BLOCK_LOCATION):
+      return { bloco: input };
+
+    case getClassName(SETUP_EQUIPMENT_HALL_LOCATION):
+      return { sala: input };
+
+    case getClassName(SETUP_EQUIPMENT_MORE_DETAILS):
+      return { descricao: input };
 
     default:
       return {};

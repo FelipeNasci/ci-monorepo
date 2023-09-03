@@ -4,13 +4,17 @@ import {
   EQUIPMENT_BLOCK_LOCATION,
   EQUIPMENT_HALL_LOCATION,
   EQUIPMENT_MORE_DETAILS,
+  EEquipmentType,
 } from "../../../menu-options/gtic/equipment-maintenance";
 import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
+import { getValuesFromObject } from "../../../utils";
 import type { State } from "../../interface";
+
+const equipments = getValuesFromObject<string>(EEquipmentType);
 
 export const EquipmentMaintenanceKindState: State = {
   menu: EQUIPMENT_MAINTENANCE_KIND,
-  next: () => EquipmentMaintenanceIDState,
+  next: (choice) => equipments.includes(choice) && EquipmentMaintenanceIDState,
 };
 
 export const EquipmentMaintenanceIDState: State = {

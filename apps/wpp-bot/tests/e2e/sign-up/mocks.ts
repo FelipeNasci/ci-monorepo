@@ -1,11 +1,11 @@
-import { COMPLETE_NAME, UNIT, EMAIL, BOND_TYPE } from '../../../src/menu-options/sign-up/user'
+import { FULL_NAME, LOCATION, EMAIL, USER_TYPE } from '../../../src/menu-options/sign-up'
 import { generateMenu } from '../../../src/utils'
 
 export const phoneNumberMock = "+5583999999997";
 
 export const signUpMock = {
-   nameRequest: generateMenu(COMPLETE_NAME),
-   localizationRequest: generateMenu(UNIT),
-   bondRequest: generateMenu(BOND_TYPE),
+   nameRequest: generateMenu(FULL_NAME),
+   localizationRequest: generateMenu(LOCATION),
+   bondRequest: generateMenu(USER_TYPE),
    emailRequest: generateMenu(EMAIL),
 }

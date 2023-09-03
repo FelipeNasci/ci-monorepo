@@ -1,13 +1,16 @@
 import {
   ZIMBRA_KIND_SERVICE,
   ZIMBRA_MORE_DETAILS,
+  EZimbraKindService,
 } from "../../../menu-options/gtic/email-zimbra";
 import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
+import { getValuesFromObject } from "../../../utils";
 import type { State } from "../../interface";
 
+const zimbraServices = getValuesFromObject<string>(EZimbraKindService);
 export const ZimbraKindServiceState: State = {
   menu: ZIMBRA_KIND_SERVICE,
-  next: () => ZimbraMoreDetailsState,
+  next: (choice) => zimbraServices.includes(choice) && ZimbraMoreDetailsState,
 };
 
 export const ZimbraMoreDetailsState: State = {
