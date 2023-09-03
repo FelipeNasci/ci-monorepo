@@ -1,6 +1,6 @@
 import { State } from '../../interface'
 import { GTIC } from '../../../menu-options/tae'
-import {  GTIC_INTERNET_ACCESS_STATE} from './internet-access'
+import { GTIC_INTERNET_ACCESS_STATE } from './internet-access'
 
 enum Choice {
   INTERNET_ACCESS = '1',
