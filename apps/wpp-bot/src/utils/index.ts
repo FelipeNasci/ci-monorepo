@@ -1,8 +1,8 @@
 import { MenuOptions } from "../menu-options/interface";
 import {
-  BOND_TYPE,
-  COMPLETE_NAME,
-  UNIT,
+  USER_TYPE,
+  FULL_NAME,
+  LOCATION,
   EMAIL,
 } from "../menu-options/sign-up/user";
 import {
@@ -43,14 +43,14 @@ export const processInput = (className: string, input: string) => {
     case getClassName(MORE_DETAILS_FAILURE_INTERNET_ACCESS):
       return { descricao: input };
 
-    case getClassName(COMPLETE_NAME):
+    case getClassName(FULL_NAME):
       return { name: input };
 
-    case getClassName(BOND_TYPE):
-      return { tipo: BOND_TYPE[input] };
+    case getClassName(USER_TYPE):
+      return { tipo: USER_TYPE[input] };
 
-    case getClassName(UNIT):
-      return { unidade: UNIT[input] };
+    case getClassName(LOCATION):
+      return { unidade: LOCATION[input] };
 
     case getClassName(EMAIL):
       return { email: input };
