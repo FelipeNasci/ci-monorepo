@@ -6,9 +6,9 @@ export enum EEquipmentMaintenance {
   VoIP = 3,
 }
 
-export const EQUIPMENT_MAINTENANCE: MenuOptions = {
-  className: "EQUIPMENT_MAINTENANCE",
-  message: "Qual o tipo de grupo você gostaria de ser inserido?",
+export const EQUIPMENT_MAINTENANCE_KIND: MenuOptions = {
+  className: "EQUIPMENT_MAINTENANCE_KIND",
+  message: "Qual o tipo de equipamento que você deseja solicitar manutenção?",
   [EEquipmentMaintenance.Computer]: "Computador",
   [EEquipmentMaintenance.Printer]: "Impressora",
   [EEquipmentMaintenance.VoIP]: "Telefone VoIP",

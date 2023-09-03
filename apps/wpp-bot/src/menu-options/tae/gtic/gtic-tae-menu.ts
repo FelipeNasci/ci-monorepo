@@ -4,9 +4,11 @@ import { MenuOptions } from '../../interface'
 export const GTIC: MenuOptions = {
   className: 'GTIC',
   message: "No que a GTIC poderia te ajudar?",
-  1: "ACESSO A INTERNET",
-  //2: "EMAIL ZIMBRA",
-  //3: "RESERVAR UM LABORATÓRIO",
+  1: "ACESSO À INTERNET",
+  2: "EMAIL ZIMBRA",
+  3: "GRUPO DE EMAIL",
+  4: "MANUTENÇÃO DE EQUIPAMENTOS",
+  5: "INSTALAÇÃO / CONFIGURAÇÃO",
 }
 
 export const INTERNET_ACCESS_GTIC: MenuOptions = {

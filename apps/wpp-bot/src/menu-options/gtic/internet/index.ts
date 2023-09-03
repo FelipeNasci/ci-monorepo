@@ -1,9 +1,9 @@
 import { MenuOptions } from '../../interface'
 
 export enum EInternetAccessKind {
-  SetupWifi = 1,
-  CableInternetFailure = 2,
-  WifiInternetFailure = 3,
+  SetupWifi = "1",
+  CableInternetFailure = "2",
+  WifiInternetFailure = "3",
 }
 
 export const INTERNET_ACCESS_KIND: MenuOptions = {
