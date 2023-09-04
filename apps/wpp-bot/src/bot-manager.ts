@@ -2,6 +2,7 @@ import { FullNameState } from "./states/sign-up";
 import { State } from "./states/interface";
 import { generateMenu, processInput } from "./utils";
 import { sendEmail } from "./services/email";
+import ExpireMap from "expiry-map";
 
 type User = { phoneNumber: string; message: string; isLogged?: boolean };
 type Request = Record<string, string>;
@@ -9,7 +10,9 @@ type ActiveUsers = {
   payload: { createdAt: Date; request: Request; state: State };
 };
 
-const activeUsers = new Map<string, ActiveUsers>();
+const time = 60 * 60 * 1000; // 1 hour
+
+const activeUsers = new ExpireMap<string, ActiveUsers>(time);
 
 const getInput = (state: State, choice: string) => {
   const { className } = state.menu;
