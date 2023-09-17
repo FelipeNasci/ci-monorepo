@@ -9,7 +9,7 @@ import {
 } from "../../../../../src/menu-options/gtic/internet/failure";
 import { SETUP_WIFI } from "../../../../../src/menu-options/gtic/internet/setup-wifi";
 
-import { generateMenu } from "../../../../../src/utils";
+import { generateMenu } from "../../../../../src/helpers";
 
 export const phoneNumberMock = "+5583999999997";
 

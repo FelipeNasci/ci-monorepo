@@ -1,4 +1,4 @@
-import { botManager } from "../../../../../src/bot-manager";
+import { botController } from "../../../../../src/bot-controller";
 import { phoneNumberMock, gticMock } from "./mocks";
 
 enum Choice {
@@ -17,7 +17,7 @@ type MakeSutParams = {
 };
 
 const makeSut = (params: MakeSutParams) =>
-  botManager({ phoneNumber: phoneNumberMock, ...params });
+  botController({ phoneNumber: phoneNumberMock, ...params });
 
 const goToInternetFailureStage = () => {
   makeSut({ message: Choice.ANY_MESSAGE });

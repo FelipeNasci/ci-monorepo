@@ -1,18 +1,19 @@
-import whatsappMessages from './services/whatsapp-messages'
-import { botManager } from './bot-manager'
+import whatsappMessages from "./services/whatsapp-messages";
+import { botController } from "./bot-controller";
 
 function sendMessage(client, sendTo, text: string) {
   client
     .sendText(sendTo, text)
-    .then((result) => { })
+    .then((result) => {})
     .catch((erro) => {
       console.error("ERRO: ", erro);
     });
 }
 
 async function startServer() {
-  whatsappMessages.createServer()
-    .then((client) => handleClient(client))
+  whatsappMessages
+    .createServer()
+    .then(handleClient)
     .catch((error) => console.log({ error }));
 }
 
@@ -21,8 +22,11 @@ function handleClient(client) {
 }
 
 function messageHandler(client, message) {
-  const response = botManager({ phoneNumber: message.from,  message: message.body })
-  sendMessage(client, message.from, response)
+  const response = botController({
+    phoneNumber: message.from,
+    message: message.body,
+  });
+  sendMessage(client, message.from, response);
 }
 
-startServer()
+startServer();

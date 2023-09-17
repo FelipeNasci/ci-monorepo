@@ -1,8 +1,7 @@
-import { botManager } from '../../src/bot-manager';
+import { botController } from "../../src/bot-controller";
 
-describe('BotManager', () => {
-  it('should be defined', () => {
-    expect(botManager).toBeDefined();
+describe("BotManager", () => {
+  it("should be defined", () => {
+    expect(botController).toBeDefined();
   });
-})
-
+});
