@@ -77,7 +77,7 @@ export const mapInputToOptions = (className: string, input: string) => {
       return { tipoServico: ZIMBRA_KIND_SERVICE.options[input] };
 
     case getClassName(EMAIL_GROUP_KIND):
-      return { tipoServico: ZIMBRA_KIND_SERVICE.options[input] };
+      return { tipoServico: EMAIL_GROUP_KIND.options[input] };
 
     case getClassName(EMAIL_GROUP_MORE_DETAILS):
       return { descricao: input };
