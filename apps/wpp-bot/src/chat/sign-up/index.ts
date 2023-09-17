@@ -8,21 +8,21 @@ import {
   EMAIL,
 } from "../../menu-options/sign-up";
 import { InitialMenuState } from "../entrypoint-state";
-import { getValuesFromObject } from "../../utils";
+import { extractValuesFromObject } from "../../helpers";
 
 export const FullNameState: State = {
   menu: FULL_NAME,
   next: () => UserTypeState,
 };
 
-const usersType = getValuesFromObject<string>(EUserType);
+const usersType = extractValuesFromObject<string>(EUserType);
 
 export const UserTypeState: State = {
   menu: USER_TYPE,
   next: (choice) => usersType.includes(choice) && LocationState,
 };
 
-const locations = getValuesFromObject<string>(ELocation);
+const locations = extractValuesFromObject<string>(ELocation);
 
 export const LocationState: State = {
   menu: LOCATION,

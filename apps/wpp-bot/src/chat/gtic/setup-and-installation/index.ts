@@ -7,10 +7,10 @@ import {
   ESetupAndInstallationKind,
 } from "../../../menu-options/gtic/sertup-and-installation";
 import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
-import { getValuesFromObject } from "../../../utils";
+import { extractValuesFromObject } from "../../../helpers";
 import type { State } from "../../interface";
 
-const installationsKind = getValuesFromObject<string>(
+const installationsKind = extractValuesFromObject<string>(
   ESetupAndInstallationKind
 );
 

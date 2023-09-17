@@ -4,10 +4,10 @@ import {
   EEmailGroupKind,
 } from "../../../menu-options/gtic/email-group";
 import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
-import { getValuesFromObject } from "../../../utils";
+import { extractValuesFromObject } from "../../../helpers";
 import type { State } from "../../interface";
 
-const emailsKind = getValuesFromObject<string>(EEmailGroupKind);
+const emailsKind = extractValuesFromObject<string>(EEmailGroupKind);
 
 export const EmailGroupKindState: State = {
   menu: EMAIL_GROUP_KIND,

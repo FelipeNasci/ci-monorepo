@@ -7,10 +7,10 @@ import {
   EEquipmentType,
 } from "../../../menu-options/gtic/equipment-maintenance";
 import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
-import { getValuesFromObject } from "../../../utils";
+import { extractValuesFromObject } from "../../../helpers";
 import type { State } from "../../interface";
 
-const equipments = getValuesFromObject<string>(EEquipmentType);
+const equipments = extractValuesFromObject<string>(EEquipmentType);
 
 export const EquipmentMaintenanceKindState: State = {
   menu: EQUIPMENT_MAINTENANCE_KIND,
