@@ -1,7 +1,7 @@
 import { MenuOptions } from "../../interface";
 
 export enum EEmailGroupKind {
-  Tae =  "1",
+  Tae = "1",
   Professor = "2",
   CenterCouncil = "3",
   Council = "4",
@@ -10,10 +10,12 @@ export enum EEmailGroupKind {
 export const EMAIL_GROUP_KIND: MenuOptions = {
   className: "EMAIL_GROUP_KIND",
   message: "Qual o tipo de grupo você gostaria de ser inserido?",
-  [EEmailGroupKind.Tae]: "TAE",
-  [EEmailGroupKind.Professor]: "Professor",
-  [EEmailGroupKind.CenterCouncil]: "Conselho de centro",
-  [EEmailGroupKind.Council]: "Conselho",
+  options: {
+    [EEmailGroupKind.Tae]: "TAE",
+    [EEmailGroupKind.Professor]: "Professor",
+    [EEmailGroupKind.CenterCouncil]: "Conselho de centro",
+    [EEmailGroupKind.Council]: "Conselho",
+  },
 };
 
 export const EMAIL_GROUP_MORE_DETAILS: MenuOptions = {

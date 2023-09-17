@@ -9,9 +9,11 @@ export enum EEquipmentType {
 export const EQUIPMENT_MAINTENANCE_KIND: MenuOptions = {
   className: "EQUIPMENT_MAINTENANCE_KIND",
   message: "Qual o tipo de equipamento que você deseja solicitar manutenção?",
-  [EEquipmentType.Computer]: "Computador",
-  [EEquipmentType.Printer]: "Impressora",
-  [EEquipmentType.VoIP]: "Telefone VoIP",
+  options: {
+    [EEquipmentType.Computer]: "Computador",
+    [EEquipmentType.Printer]: "Impressora",
+    [EEquipmentType.VoIP]: "Telefone VoIP",
+  },
 };
 
 export const EQUIPMENT_ID: MenuOptions = {

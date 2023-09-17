@@ -8,8 +8,10 @@ export enum EZimbraKindService {
 export const ZIMBRA_KIND_SERVICE: MenuOptions = {
   className: "ZIMBRA_KIND_SERVICE",
   message: "Qual o tipo de serviço você gostaria?",
-  [EZimbraKindService.InstitutionalEmail]: "Criação de email institucional",
-  [EZimbraKindService.PasswordRecovery]: "Alteração de senha",
+  options: {
+    [EZimbraKindService.InstitutionalEmail]: "Criação de email institucional",
+    [EZimbraKindService.PasswordRecovery]: "Alteração de senha",
+  },
 };
 
 export const ZIMBRA_MORE_DETAILS: MenuOptions = {

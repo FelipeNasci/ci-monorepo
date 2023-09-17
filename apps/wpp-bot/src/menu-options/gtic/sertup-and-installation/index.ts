@@ -8,9 +8,10 @@ export enum ESetupAndInstallationKind {
 export const SETUP_KIND: MenuOptions = {
   className: "SETUP_KIND",
   message: "Qual o tipo de instação você precisa?",
-  [ESetupAndInstallationKind.Software]: "Software",
-  [ESetupAndInstallationKind.Devices]: "Dispositivos",
-
+  options: {
+    [ESetupAndInstallationKind.Software]: "Software",
+    [ESetupAndInstallationKind.Devices]: "Dispositivos",
+  },
 };
 
 export const SETUP_EQUIPMENT_ID: MenuOptions = {

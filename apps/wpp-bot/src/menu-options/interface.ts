@@ -1,2 +1,5 @@
-type Key = "message" | string;
-export type MenuOptions = Partial<Record<Key, string>> & { className?: string };
+export type MenuOptions = {
+  message?: string;
+  options?: Record<string, string>;
+  className?: string;
+};

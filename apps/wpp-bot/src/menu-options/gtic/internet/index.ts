@@ -1,4 +1,4 @@
-import { MenuOptions } from '../../interface'
+import { MenuOptions } from "../../interface";
 
 export enum EInternetAccessKind {
   SetupWifi = "1",
@@ -7,9 +7,11 @@ export enum EInternetAccessKind {
 }
 
 export const INTERNET_ACCESS_KIND: MenuOptions = {
-  className: 'INTERNET_ACCESS_KIND',
+  className: "INTERNET_ACCESS_KIND",
   message: "Em qual tipo de conexão a GTIC pode te ajudar?",
-  [EInternetAccessKind.SetupWifi]: "CONECTAR A UFPB SEM FIOS",
-  [EInternetAccessKind.CableInternetFailure]: "FALHA EM INTERNET CABEADA",
-  [EInternetAccessKind.WifiInternetFailure]: "FALHA EM INTERNET WIFI",
-}
+  options: {
+    [EInternetAccessKind.SetupWifi]: "CONECTAR A UFPB SEM FIOS",
+    [EInternetAccessKind.CableInternetFailure]: "FALHA EM INTERNET CABEADA",
+    [EInternetAccessKind.WifiInternetFailure]: "FALHA EM INTERNET WIFI",
+  },
+};
