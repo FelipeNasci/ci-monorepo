@@ -40,5 +40,6 @@ export const LOCATION: MenuOptions = {
 
 export const EMAIL: MenuOptions = {
   className: "EMAIL",
-  message: "Agora precisamos saber o seu email 😄",
+  message:
+    "Agora precisamos saber o seu email 😄, lembre-se que todas as nossas comunicações serão por ele.",
 };

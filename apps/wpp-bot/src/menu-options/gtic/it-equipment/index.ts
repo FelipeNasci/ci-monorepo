@@ -47,5 +47,5 @@ export const EQUIPMENT_HALL_LOCATION: MenuOptions = {
 
 export const EQUIPMENT_MORE_DETAILS: MenuOptions = {
   className: "EQUIPMENT_MORE_DETAILS",
-  message: "Por favor, insira informações adicionais sobre o problema",
+  message: "Por favor, insira informações adicionais",
 };
