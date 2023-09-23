@@ -7,6 +7,7 @@ import {
   welcomeToChatMessage,
 } from "./helpers/messages";
 import { inputListener } from "./helpers/input-listeners";
+import { getAllowedMenu, isAllowedOption } from "./helpers/user-permissions";
 import { sendEmail } from "./services/email";
 import ExpireMap from "expiry-map";
 import { time } from "../config";
@@ -73,39 +74,69 @@ export function botController(user: ChatUser): string {
   }
 
   const choice = user.message;
+  const { currentState } = activeUser.payload;
 
-  const isFirstStage = activeUser.payload.previousStates.length === 0;
-  const hasGoBackChoose = choice.toLowerCase() === Actions.goBack;
-  const hasExitChoose = choice.toLowerCase() === Actions.exit;
+  try {
+    const isFirstStage = activeUser.payload.previousStates.length === 0;
+    const hasGoBackChoose = choice.toLowerCase() === Actions.goBack;
+    const hasExitChoose = choice.toLowerCase() === Actions.exit;
 
-  if (hasGoBackChoose) {
-    const { menu } = handleGoBack(user, activeUser, isFirstStage);
-    return generateMenu(menu);
-  }
+    const nextState = currentState?.next(choice);
+    const isFinalStage = !nextState?.next;
 
-  if (hasExitChoose) {
-    handleExit(user);
-    return exitMessage();
-  }
+    if (hasGoBackChoose) {
+      const { menu } = handleGoBack(user, activeUser, isFirstStage);
+      return generateMenu(menu);
+    }
 
-  const nextState = activeUser.payload.currentState?.next(choice);
-  const isFinalStage = !nextState?.next;
+    if (hasExitChoose) {
+      handleExit(user);
+      return exitMessage();
+    }
 
-  if (!nextState)
-    return wrongAnswerMessage(
-      generateMenu(activeUser.payload.currentState.menu)
+    if (!nextState) return wrongAnswerMessage(generateMenu(currentState.menu));
+
+    const request = {
+      ...activeUser.payload.request,
+      ...inputListener(currentState.menu, choice),
+    };
+
+    const { tipo: userType } = request;
+
+    const _isAllowedOption = isAllowedOption(
+      currentState.menu.className,
+      userType,
+      choice
     );
+    if (!_isAllowedOption)
+      return wrongAnswerMessage(generateMenu(currentState.menu));
 
-  const request = {
-    ...activeUser.payload.request,
-    ...inputListener(activeUser.payload.currentState.menu, choice),
-  };
+    if (isFinalStage) {
+      const { answer } = handleFinalStage(nextState, request, user);
+      return answer(choice);
+    }
 
-  if (isFinalStage) {
-    const { answer } = handleFinalStage(nextState, request, user);
-    return answer(choice);
+    if (userType) {
+      const options = getAllowedMenu(
+        nextState.menu.className,
+        userType,
+        activeUser.payload.currentState.next(choice)
+      );
+
+      if (options) {
+        const newState = {
+          ...nextState,
+          menu: { ...nextState.menu, options },
+        };
+        handleUpdateState(user, activeUser, request, newState);
+        return generateMenu(newState.menu);
+      }
+    }
+
+    handleUpdateState(user, activeUser, request, nextState);
+
+    return generateMenu(nextState.menu);
+  } catch (error) {
+    return wrongAnswerMessage(generateMenu(currentState.menu));
   }
-  handleUpdateState(user, activeUser, request, nextState);
-
-  return generateMenu(nextState.menu);
 }
