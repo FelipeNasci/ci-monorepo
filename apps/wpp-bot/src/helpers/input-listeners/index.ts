@@ -21,12 +21,13 @@ import {
 } from "../../menu-options/gtic/email-group";
 
 import {
+  EQUIPMENT_SERVICE_KIND,
   EQUIPMENT_BLOCK_LOCATION,
   EQUIPMENT_HALL_LOCATION,
   EQUIPMENT_ID,
   EQUIPMENT_MAINTENANCE_KIND,
   EQUIPMENT_MORE_DETAILS,
-} from "../../menu-options/gtic/equipment-maintenance";
+} from "../../menu-options/gtic/it-equipment";
 
 import {
   SETUP_EQUIPMENT_BLOCK_LOCATION,
@@ -88,8 +89,11 @@ export const mapInputToOptions = (className: string, input: string) => {
     case getClassName(EMAIL_GROUP_MORE_DETAILS):
       return { descricao: input };
 
+    case getClassName(EQUIPMENT_SERVICE_KIND):
+      return { tipoServico: EQUIPMENT_SERVICE_KIND.options[input] };
+
     case getClassName(EQUIPMENT_MAINTENANCE_KIND):
-      return { tipoServico: EQUIPMENT_MAINTENANCE_KIND.options[input] };
+      return { dispositivo: EQUIPMENT_MAINTENANCE_KIND.options[input] };
 
     case getClassName(EQUIPMENT_ID):
       return { tombamento: input };

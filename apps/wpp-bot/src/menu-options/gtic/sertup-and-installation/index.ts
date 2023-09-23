@@ -2,7 +2,8 @@ import { MenuOptions } from "../../interface";
 
 export enum ESetupAndInstallationKind {
   Software = "1",
-  Devices = "2",
+  Computer = "2",
+  VoipPhone = "3",
 }
 
 export const SETUP_KIND: MenuOptions = {
@@ -10,7 +11,8 @@ export const SETUP_KIND: MenuOptions = {
   message: "Qual o tipo de instação você precisa?",
   options: {
     [ESetupAndInstallationKind.Software]: "Software",
-    [ESetupAndInstallationKind.Devices]: "Dispositivos",
+    [ESetupAndInstallationKind.Computer]: "Computadores",
+    [ESetupAndInstallationKind.VoipPhone]: "Telefonia IP",
   },
 };
 

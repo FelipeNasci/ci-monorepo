@@ -5,12 +5,23 @@ import {
   EQUIPMENT_HALL_LOCATION,
   EQUIPMENT_MORE_DETAILS,
   EEquipmentType,
-} from "../../../menu-options/gtic/equipment-maintenance";
+  EQUIPMENT_SERVICE_KIND,
+  EEquipmentServiceType,
+} from "../../../menu-options/gtic/it-equipment";
 import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
 import { extractValuesFromObject } from "../../../helpers";
 import type { State } from "../../interface";
 
 const equipments = extractValuesFromObject<string>(EEquipmentType);
+const equipmentServiceTypes = extractValuesFromObject<string>(
+  EEquipmentServiceType
+);
+
+export const EquipmentServiceKindState: State = {
+  menu: EQUIPMENT_SERVICE_KIND,
+  next: (choice) =>
+    equipmentServiceTypes.includes(choice) && EquipmentMaintenanceKindState,
+};
 
 export const EquipmentMaintenanceKindState: State = {
   menu: EQUIPMENT_MAINTENANCE_KIND,

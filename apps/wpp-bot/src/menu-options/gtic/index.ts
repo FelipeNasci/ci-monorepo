@@ -4,7 +4,7 @@ export enum EGticOptions {
   InternetAccess = "1",
   EmailZimbra = "2",
   EmailGroup = "3",
-  EquipmentMaintenance = "4",
+  ItEquipments = "4",
   SetupAndInstallation = "5",
   ItManagement = "6",
 }
@@ -15,7 +15,7 @@ export const GTIC: MenuOptions = {
     [EGticOptions.InternetAccess]: "Acesso à internet",
     [EGticOptions.EmailZimbra]: "Email Zimbra",
     [EGticOptions.EmailGroup]: "Grupo de Email",
-    [EGticOptions.EquipmentMaintenance]: "Manutenção de Equipamentos",
+    [EGticOptions.ItEquipments]: "Equipamentos de TI",
     [EGticOptions.SetupAndInstallation]: "Instalação / Configuração",
     [EGticOptions.ItManagement]: "Gerência de TI",
   },

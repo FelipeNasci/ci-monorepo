@@ -6,6 +6,20 @@ export enum EEquipmentType {
   VoIP = "3",
 }
 
+export enum EEquipmentServiceType {
+  Maintenance = "1",
+  GiveBack = "2",
+}
+
+export const EQUIPMENT_SERVICE_KIND: MenuOptions = {
+  className: "EQUIPMENT_SERVICE_KIND",
+  message: "Qual a sua necessidade com o equipamento?",
+  options: {
+    [EEquipmentServiceType.Maintenance]: "Manutenção",
+    [EEquipmentServiceType.GiveBack]: "Devolução",
+  },
+};
+
 export const EQUIPMENT_MAINTENANCE_KIND: MenuOptions = {
   className: "EQUIPMENT_MAINTENANCE_KIND",
   message: "Qual o tipo de equipamento que você deseja solicitar manutenção?",
