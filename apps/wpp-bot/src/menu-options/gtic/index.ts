@@ -6,6 +6,7 @@ export enum EGticOptions {
   EmailGroup = "3",
   EquipmentMaintenance = "4",
   SetupAndInstallation = "5",
+  ItManagement = "6",
 }
 export const GTIC: MenuOptions = {
   className: "GTIC",
@@ -16,5 +17,6 @@ export const GTIC: MenuOptions = {
     [EGticOptions.EmailGroup]: "Grupo de Email",
     [EGticOptions.EquipmentMaintenance]: "Manutenção de Equipamentos",
     [EGticOptions.SetupAndInstallation]: "Instalação / Configuração",
+    [EGticOptions.ItManagement]: "Gerência de TI",
   },
 };

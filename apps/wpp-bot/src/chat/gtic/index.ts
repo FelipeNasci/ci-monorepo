@@ -1,10 +1,11 @@
 import { State } from "../interface";
-import { GTIC , EGticOptions} from "../../menu-options/gtic";
+import { GTIC, EGticOptions } from "../../menu-options/gtic";
 import { InternetAccessState } from "./internet";
 import { ZimbraKindServiceState } from "./email-zimbra";
 import { EmailGroupKindState } from "./email-group";
 import { EquipmentMaintenanceKindState } from "./equipment-maintenance";
 import { SetupKindState } from "./setup-and-installation";
+import { ItManagementState } from "./it-management";
 
 export const GticMenuOptionsState: State = {
   menu: GTIC,
@@ -24,6 +25,9 @@ export const GticMenuOptionsState: State = {
 
       case EGticOptions.SetupAndInstallation:
         return SetupKindState;
+
+      case EGticOptions.ItManagement:
+        return ItManagementState;
     }
   },
 };

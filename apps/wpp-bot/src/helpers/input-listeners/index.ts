@@ -35,6 +35,12 @@ import {
   SETUP_KIND,
   SETUP_EQUIPMENT_MORE_DETAILS,
 } from "../../menu-options/gtic/sertup-and-installation";
+
+import {
+  IT_MANAGEMENT,
+  IT_MANAGEMENT_MORE_DETAILS,
+} from "../../menu-options/gtic/it-management";
+
 import { State } from "../../chat/interface";
 
 const getClassName = ({ className }: MenuOptions) => className;
@@ -110,6 +116,12 @@ export const mapInputToOptions = (className: string, input: string) => {
       return { sala: input };
 
     case getClassName(SETUP_EQUIPMENT_MORE_DETAILS):
+      return { descricao: input };
+
+    case getClassName(IT_MANAGEMENT):
+      return { tipoServico: IT_MANAGEMENT.options[input] };
+
+    case getClassName(IT_MANAGEMENT_MORE_DETAILS):
       return { descricao: input };
 
     default:
