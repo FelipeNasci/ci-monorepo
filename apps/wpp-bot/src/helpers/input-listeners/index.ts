@@ -43,6 +43,7 @@ import {
 } from "../../menu-options/gtic/it-management";
 
 import { State } from "../../chat/interface";
+import { TicketDestination } from "../../domain";
 
 const getClassName = ({ className }: MenuOptions) => className;
 
@@ -53,7 +54,7 @@ export const mapInputToOptions = (className: string, input: string) => {
   switch (className) {
     case getClassName(GTIC):
       const servico = GTIC.options[input];
-      return { servico, sendTo: "suporte@ccae.ufpb.br" };
+      return { servico, destination: TicketDestination.Gtic };
 
     case getClassName(INTERNET_ACCESS_KIND):
       const option = { "2": "cabo", "3": "wifi" };
