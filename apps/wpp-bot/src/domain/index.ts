@@ -7,6 +7,7 @@ export enum Actions {
 
 export enum TicketDestination {
   Gtic = "gtic",
+  Ascon = "ascon",
 }
 
 export type ChatUser = { phoneNumber: string; message: string };
