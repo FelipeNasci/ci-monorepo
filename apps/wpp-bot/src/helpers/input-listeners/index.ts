@@ -44,6 +44,8 @@ import {
 
 import { ASCON } from "../../menu-options/ascon";
 
+import { ADMINISTRATIVE_CONSULTANCY } from "../../menu-options/administrative-consultancy";
+
 import { State } from "../../chat/interface";
 import { TicketDestination } from "../../domain";
 
@@ -133,6 +135,12 @@ export const mapInputToOptions = (className: string, input: string) => {
 
     case getClassName(ASCON):
       return { destination: TicketDestination.Ascon, descricao: input };
+
+    case getClassName(ADMINISTRATIVE_CONSULTANCY):
+      return {
+        destination: TicketDestination.AdministrativeConsultancy,
+        descricao: input,
+      };
 
     default:
       return {};
