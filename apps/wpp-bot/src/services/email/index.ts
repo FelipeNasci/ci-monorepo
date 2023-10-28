@@ -1,20 +1,23 @@
 const nodemailer = require("nodemailer");
-import { email } from '../../../config'
+import { email as emailConfig } from "../../../config";
 
-const transporter = nodemailer.createTransport(email);
-
-export async function sendEmail({ sendTo, ...data } ) {
-  console.log(data, `${data.unidade} - ${data.servico} - ${data.tipoServico}`);
-  // transporter.sendMail({
-  //   from: `"${data.name}" <${email.auth.user}>`, // sender address
-  //   replyTo: `"${data.name}" <${data.email}>`,
-  //   to: sendTo, // list of receivers
-  //   subject: `${data.unidade} - ${data.servico} - ${data.tipoServico}`, // Subject line
-  //   text: Object.entries(data)
-  //     .map(([key, value]) => `${key}: ${value}`)
-  //     .join("\n"), // plain text body
-  //   html: Object.entries(data)
-  //     .map(([key, value]) => `<b>${key}</b>: ${value}`)
-  //     .join("</br>"), // html
-  // });
+interface Send {
+  from: { name: string; email: string };
+  to: string | string[];
+  subject: string;
+  text: string;
+  html?: string;
 }
+
+const transporter = nodemailer.createTransport(emailConfig);
+
+async function send(data: Send) {
+  const { subject, text, html } = data;
+  const to = Array.isArray(data.to) ? data.to.join(",") : data.to;
+  const from = `"${data.from.name}" <${email.auth.user}>`;
+  const replyTo = `"${data.from.name}" <${data.from.email}>`;
+
+  transporter.sendMail({ from, replyTo, to, subject, text, html });
+}
+
+export default { send };

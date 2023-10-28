@@ -8,7 +8,7 @@ import {
 } from "./helpers/messages";
 import { inputListener } from "./helpers/input-listeners";
 import { getAllowedMenu, isAllowedOption } from "./helpers/user-permissions";
-import { sendEmail } from "./services/email";
+import { Ticket } from "./services/tickets";
 import ExpireMap from "expiry-map";
 import { time } from "../config";
 import { Actions, ActiveUsers, ChatUser, Request } from "./domain";
@@ -61,7 +61,7 @@ const handleExit = (user: ChatUser) => {
 
 const handleFinalStage = (state: State, request: Request, user: ChatUser) => {
   activeUsers.delete(user.phoneNumber);
-  if (state?.type == "service") sendEmail(request as any);
+  if (state?.type == "service") Ticket.Gtic.create(request as any);
   return state;
 };
 
