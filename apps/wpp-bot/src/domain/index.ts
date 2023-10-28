@@ -5,6 +5,10 @@ export enum Actions {
   exit = "sair",
 }
 
+export enum TicketDestination {
+  Gtic = "gtic",
+}
+
 export type ChatUser = { phoneNumber: string; message: string };
 
 export type Request = Record<string, string>;

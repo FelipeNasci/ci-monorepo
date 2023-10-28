@@ -1,5 +1,6 @@
 import EmailService from "../email";
 import { Ticket } from "./interface";
+import { ticket as ticketConfig } from "../../../config";
 
 export class GticTicket implements Ticket {
   private static instance: GticTicket;
@@ -15,15 +16,13 @@ export class GticTicket implements Ticket {
       .join("</br>");
 
     const subject = `${data.unidade} - ${data.servico} - ${data.tipoServico}`;
-    const to = data.sendTo;
+    const to = ticketConfig.gtic.email;
     const from = { name: data.name, email: data.email };
     EmailService.send({ from, to, subject, text, html });
   }
 
   public static getInstance() {
-    console.log("instance", this.instance);
     if (!this.instance) this.instance = new GticTicket();
-    console.log("instance1", this.instance);
     return this.instance;
   }
 }
