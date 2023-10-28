@@ -1,11 +1,13 @@
 import { Ticket } from "../services/tickets";
 import { TicketDestination } from "../domain";
 
-const create = async (ticket: any) => {
-  switch (ticket.destination) {
-    case TicketDestination.Gtic:
-      return Ticket.Gtic.create(ticket);
-  }
+const create = async ({ destination, ...ticket }: any) => {
+  const ticketService = {
+    [TicketDestination.Gtic]: Ticket.Gtic,
+    [TicketDestination.Ascon]: Ticket.Ascon,
+  };
+
+  ticketService[destination].create(ticket);
 };
 
 export const TicketController = { create };

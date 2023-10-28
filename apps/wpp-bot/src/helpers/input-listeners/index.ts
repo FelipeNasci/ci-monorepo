@@ -42,6 +42,8 @@ import {
   IT_MANAGEMENT_MORE_DETAILS,
 } from "../../menu-options/gtic/it-management";
 
+import { ASCON } from "../../menu-options/ascon";
+
 import { State } from "../../chat/interface";
 import { TicketDestination } from "../../domain";
 
@@ -128,6 +130,9 @@ export const mapInputToOptions = (className: string, input: string) => {
 
     case getClassName(IT_MANAGEMENT_MORE_DETAILS):
       return { descricao: input };
+
+    case getClassName(ASCON):
+      return { destination: TicketDestination.Ascon, descricao: input };
 
     default:
       return {};

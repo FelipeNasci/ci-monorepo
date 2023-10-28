@@ -79,3 +79,27 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+## wpp-bot
+
+### Como adicionar novos Fluxos
+
+1 - Identifique o ponto de entrada para o novo menu / fluxo
+  `./menu-options`
+
+2 - Adicione um fluxo de opções para que o usuário possa navegar entre os menus
+  `./chat`
+
+## Será necessário uma integração com um novo sistema?
+
+3 - Adicione um TicketDestination (para que o sistema possa identificar o sistema externo que deverá se conectar) ao `Domain` da aplicação
+  `./domain` ~> `TicketDestination`
+
+4 - Adicione um novo `sender` para se integrar ao sistema externo
+  `./services/tickets`
+
+5 - Mapeie o `sender` criado ao `TicketDestination` no objeto `ticketService` em TicketController
+  `./controller/ticket-controller`
+
+6 - Adicione o mapeamento de resposta do usuário ao `input-listener`
+  `./helpers/input-listener`
