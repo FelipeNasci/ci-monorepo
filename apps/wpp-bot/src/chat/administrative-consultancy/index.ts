@@ -1,9 +1,9 @@
 import { State } from "../interface";
-import { ASCON } from "../../menu-options/ascon";
+import { ADMINISTRATIVE_CONSULTANCY } from "../../menu-options/administrative-consultancy";
 import { SUCCESS_ANSWER } from "../../menu-options/shared/success";
 
 export const AdministrativeConsultancyMenuOptionsState: State = {
-  menu: ASCON,
+  menu: ADMINISTRATIVE_CONSULTANCY,
   next: () => AnswerAdministrativeConsultancyState,
 };
 
