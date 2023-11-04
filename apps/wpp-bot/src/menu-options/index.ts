@@ -13,5 +13,6 @@ export const ENTRYPOINT_MENU_OPTIONS: MenuOptions = {
     [EntrypointOptions.GTIC]: "GTIC",
     [EntrypointOptions.ADMINISTRATIVE_CONSULTANCY]: "Assessoria Administrativa",
     [EntrypointOptions.ASCON]: "ASCON",
+    [EntrypointOptions.SUBPREFEITRA]: "Subprefeitura Universitária",
   },
 };

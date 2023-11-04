@@ -3,6 +3,7 @@ import { ENTRYPOINT_MENU_OPTIONS, EntrypointOptions } from "../../menu-options";
 import { GticMenuOptionsState } from "../gtic";
 import { AsconMenuOptionsState } from "../ascon";
 import { AdministrativeConsultancyMenuOptionsState } from "../administrative-consultancy";
+import { puMaintenanceDepartmentKindState } from "../university-town-hall";
 
 export const InitialMenuState: State = {
   menu: ENTRYPOINT_MENU_OPTIONS,
@@ -14,6 +15,8 @@ export const InitialMenuState: State = {
         return AsconMenuOptionsState;
       case EntrypointOptions.ADMINISTRATIVE_CONSULTANCY:
         return AdministrativeConsultancyMenuOptionsState;
+      case EntrypointOptions.SUBPREFEITRA:
+        return puMaintenanceDepartmentKindState;
     }
   },
 };
