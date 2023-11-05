@@ -46,6 +46,15 @@ import { ASCON } from "../../menu-options/ascon";
 
 import { ADMINISTRATIVE_CONSULTANCY } from "../../menu-options/administrative-consultancy";
 
+import {
+  PU_DEPARTMENT_REQUESTER,
+  PU_REGISTER_NUMBER_REQUESTER,
+  PU_DEPARTMENT_PHONE_REQUESTER,
+  PU_MAINTENANCE_DEPARTMENT,
+  PU_MAINTENANCE_CATEGORY,
+  PU_MAINTENANCE_MORE_DETAILS,
+} from "../../menu-options/university-town-hall";
+
 import { State } from "../../chat/interface";
 import { TicketDestination } from "../../domain";
 
@@ -141,6 +150,27 @@ export const mapInputToOptions = (className: string, input: string) => {
         destination: TicketDestination.AdministrativeConsultancy,
         descricao: input,
       };
+
+    case getClassName(PU_DEPARTMENT_REQUESTER):
+      return {
+        destination: TicketDestination.UniversityTownHall,
+        departmentRequester: input,
+      };
+
+    case getClassName(PU_REGISTER_NUMBER_REQUESTER):
+      return { registerNumberRequester: input };
+
+    case getClassName(PU_DEPARTMENT_PHONE_REQUESTER):
+      return { departmentPhone: input };
+
+    case getClassName(PU_MAINTENANCE_DEPARTMENT):
+      return { maintenanceDepartment: input };
+
+    case getClassName(PU_MAINTENANCE_CATEGORY):
+      return { tipoServico: PU_MAINTENANCE_CATEGORY.options[input] };
+
+    case getClassName(PU_MAINTENANCE_MORE_DETAILS):
+      return { descricao: input };
 
     default:
       return {};
