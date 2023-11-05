@@ -9,6 +9,7 @@ export enum TicketDestination {
   Gtic = "gtic",
   Ascon = "ascon",
   AdministrativeConsultancy = "administrative_consultancy",
+  UniversityTownHall = "university_town_hall",
 }
 
 export type ChatUser = { phoneNumber: string; message: string };
