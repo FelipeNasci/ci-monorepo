@@ -2,8 +2,8 @@ import {
   EMAIL_GROUP_MORE_DETAILS,
   EMAIL_GROUP_KIND,
   EEmailGroupKind,
-} from "../../../../menu-options/gtic/email-group";
-import { SUCCESS_ANSWER } from "../../../../menu-options/shared/success";
+} from "../../../../domain/menu-options/gtic/email-group";
+import { SUCCESS_ANSWER } from "../../../../domain/menu-options/shared/success";
 import { extractValuesFromObject } from "../../../../helpers";
 import type { State } from "../../interface";
 

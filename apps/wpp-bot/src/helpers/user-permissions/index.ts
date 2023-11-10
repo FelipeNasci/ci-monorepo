@@ -1,5 +1,5 @@
 import { State } from "../../controllers/chat-controller/interface";
-import { EUserType, USER_TYPE } from "../../menu-options/sign-up";
+import { EUserType, USER_TYPE } from "../../domain/menu-options/sign-up";
 import { otherPermissions } from "./other";
 import { studentPermissions } from "./student";
 

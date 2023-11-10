@@ -1,4 +1,4 @@
-import { MenuOptions } from "../../menu-options/interface";
+import { MenuOptions } from "../../domain/menu-options/interface";
 
 type Type = "service" | "information";
 

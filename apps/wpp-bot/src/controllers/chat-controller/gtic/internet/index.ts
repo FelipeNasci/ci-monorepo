@@ -2,7 +2,7 @@ import { State } from "../../interface";
 import {
   EInternetAccessKind,
   INTERNET_ACCESS_KIND,
-} from "../../../../menu-options/gtic/internet";
+} from "../../../../domain/menu-options/gtic/internet";
 import { SetupWifiState } from "./setup-wifi";
 import { FailureInternetBlockState } from "./failure";
 

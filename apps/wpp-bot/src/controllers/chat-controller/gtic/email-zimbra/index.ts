@@ -2,8 +2,8 @@ import {
   ZIMBRA_KIND_SERVICE,
   ZIMBRA_MORE_DETAILS,
   EZimbraKindService,
-} from "../../../../menu-options/gtic/email-zimbra";
-import { SUCCESS_ANSWER } from "../../../../menu-options/shared/success";
+} from "../../../../domain/menu-options/gtic/email-zimbra";
+import { SUCCESS_ANSWER } from "../../../../domain/menu-options/shared/success";
 import { extractValuesFromObject } from "../../../../helpers";
 import type { State } from "../../interface";
 

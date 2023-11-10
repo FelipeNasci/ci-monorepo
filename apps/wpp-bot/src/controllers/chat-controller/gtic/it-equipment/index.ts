@@ -7,8 +7,8 @@ import {
   EEquipmentType,
   EQUIPMENT_SERVICE_KIND,
   EEquipmentServiceType,
-} from "../../../../menu-options/gtic/it-equipment";
-import { SUCCESS_ANSWER } from "../../../../menu-options/shared/success";
+} from "../../../../domain/menu-options/gtic/it-equipment";
+import { SUCCESS_ANSWER } from "../../../../domain/menu-options/shared/success";
 import { extractValuesFromObject } from "../../../../helpers";
 import type { State } from "../../interface";
 

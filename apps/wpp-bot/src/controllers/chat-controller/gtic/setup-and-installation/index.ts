@@ -5,8 +5,8 @@ import {
   SETUP_EQUIPMENT_HALL_LOCATION,
   SETUP_EQUIPMENT_MORE_DETAILS,
   ESetupAndInstallationKind,
-} from "../../../../menu-options/gtic/sertup-and-installation";
-import { SUCCESS_ANSWER } from "../../../../menu-options/shared/success";
+} from "../../../../domain/menu-options/gtic/sertup-and-installation";
+import { SUCCESS_ANSWER } from "../../../../domain/menu-options/shared/success";
 import { extractValuesFromObject } from "../../../../helpers";
 import type { State } from "../../interface";
 

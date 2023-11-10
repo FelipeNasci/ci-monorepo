@@ -6,7 +6,7 @@ import {
   ELocation,
   EUserType,
   EMAIL,
-} from "../../../menu-options/sign-up";
+} from "../../../domain/menu-options/sign-up";
 import { InitialMenuState } from "../entrypoint-state";
 import { extractValuesFromObject } from "../../../helpers";
 

@@ -1,10 +1,10 @@
-import { GTIC } from "../../../../../src/menu-options/gtic";
-import { INTERNET_ACCESS_KIND } from "../../../../../src/menu-options/gtic/internet";
+import { GTIC } from "../../../../../src/domain/menu-options/gtic";
+import { INTERNET_ACCESS_KIND } from "../../../../../src/domain/menu-options/gtic/internet";
 import {
   SETUP_WIFI,
   SO,
   ANSWER_SETUP_WIFI,
-} from "../../../../../src/menu-options/gtic/internet/setup-wifi";
+} from "../../../../../src/domain/menu-options/gtic/internet/setup-wifi";
 
 import { generateMenu } from "../../../../../src/helpers";
 

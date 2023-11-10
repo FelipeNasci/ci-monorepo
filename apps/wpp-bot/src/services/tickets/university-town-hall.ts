@@ -1,7 +1,7 @@
 import { Ticket } from "./interface";
 import { ticket as ticketConfig } from "../../../config";
 import { Http } from "../http";
-import { LOCATION, ELocation } from "../../menu-options/sign-up";
+import { LOCATION, ELocation } from "../../domain/menu-options/sign-up";
 import FormData from "form-data";
 
 export class UniversityTownHallTicket implements Ticket {

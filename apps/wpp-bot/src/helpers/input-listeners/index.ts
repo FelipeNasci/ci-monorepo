@@ -1,24 +1,24 @@
-import { MenuOptions } from "../../menu-options/interface";
+import { MenuOptions } from "../../domain/menu-options/interface";
 import {
   USER_TYPE,
   FULL_NAME,
   LOCATION,
   EMAIL,
-} from "../../menu-options/sign-up";
+} from "../../domain/menu-options/sign-up";
 
-import { GTIC } from "../../menu-options/gtic";
-import { INTERNET_ACCESS_KIND } from "../../menu-options/gtic/internet";
+import { GTIC } from "../../domain/menu-options/gtic";
+import { INTERNET_ACCESS_KIND } from "../../domain/menu-options/gtic/internet";
 import {
   BLOCK_FAILURE_INTERNET_ACCESS,
   HALL_FAILURE_INTERNET_ACCESS,
   MORE_DETAILS_FAILURE_INTERNET_ACCESS,
-} from "../../menu-options/gtic/internet/failure";
+} from "../../domain/menu-options/gtic/internet/failure";
 
-import { ZIMBRA_KIND_SERVICE } from "../../menu-options/gtic/email-zimbra";
+import { ZIMBRA_KIND_SERVICE } from "../../domain/menu-options/gtic/email-zimbra";
 import {
   EMAIL_GROUP_KIND,
   EMAIL_GROUP_MORE_DETAILS,
-} from "../../menu-options/gtic/email-group";
+} from "../../domain/menu-options/gtic/email-group";
 
 import {
   EQUIPMENT_SERVICE_KIND,
@@ -27,7 +27,7 @@ import {
   EQUIPMENT_ID,
   EQUIPMENT_MAINTENANCE_KIND,
   EQUIPMENT_MORE_DETAILS,
-} from "../../menu-options/gtic/it-equipment";
+} from "../../domain/menu-options/gtic/it-equipment";
 
 import {
   SETUP_EQUIPMENT_BLOCK_LOCATION,
@@ -35,16 +35,16 @@ import {
   SETUP_EQUIPMENT_ID,
   SETUP_KIND,
   SETUP_EQUIPMENT_MORE_DETAILS,
-} from "../../menu-options/gtic/sertup-and-installation";
+} from "../../domain/menu-options/gtic/sertup-and-installation";
 
 import {
   IT_MANAGEMENT,
   IT_MANAGEMENT_MORE_DETAILS,
-} from "../../menu-options/gtic/it-management";
+} from "../../domain/menu-options/gtic/it-management";
 
-import { ASCON } from "../../menu-options/ascon";
+import { ASCON } from "../../domain/menu-options/ascon";
 
-import { ADMINISTRATIVE_CONSULTANCY } from "../../menu-options/administrative-consultancy";
+import { ADMINISTRATIVE_CONSULTANCY } from "../../domain/menu-options/administrative-consultancy";
 
 import {
   PU_DEPARTMENT_REQUESTER,
@@ -53,7 +53,7 @@ import {
   PU_MAINTENANCE_DEPARTMENT,
   PU_MAINTENANCE_CATEGORY,
   PU_MAINTENANCE_MORE_DETAILS,
-} from "../../menu-options/university-town-hall";
+} from "../../domain/menu-options/university-town-hall";
 
 import { State } from "../../controllers/chat-controller/interface";
 import { TicketDestination } from "../../domain";
