@@ -2,7 +2,7 @@ import { State } from "../../../interface";
 import {
   SETUP_WIFI,
   ANSWER_SETUP_WIFI,
-} from "../../../../menu-options/gtic/internet/setup-wifi";
+} from "../../../../../menu-options/gtic/internet/setup-wifi";
 
 export const SetupWifiState: State = {
   menu: SETUP_WIFI,

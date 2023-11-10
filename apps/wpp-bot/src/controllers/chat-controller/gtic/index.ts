@@ -1,5 +1,5 @@
 import { State } from "../interface";
-import { GTIC, EGticOptions } from "../../menu-options/gtic";
+import { GTIC, EGticOptions } from "../../../menu-options/gtic";
 import { InternetAccessState } from "./internet";
 import { ZimbraKindServiceState } from "./email-zimbra";
 import { EmailGroupKindState } from "./email-group";

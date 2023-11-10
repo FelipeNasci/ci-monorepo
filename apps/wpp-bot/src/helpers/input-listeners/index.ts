@@ -55,7 +55,7 @@ import {
   PU_MAINTENANCE_MORE_DETAILS,
 } from "../../menu-options/university-town-hall";
 
-import { State } from "../../chat/interface";
+import { State } from "../../controllers/chat-controller/interface";
 import { TicketDestination } from "../../domain";
 
 const getClassName = ({ className }: MenuOptions) => className;

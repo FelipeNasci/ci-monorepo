@@ -6,9 +6,9 @@ import {
   ELocation,
   EUserType,
   EMAIL,
-} from "../../menu-options/sign-up";
+} from "../../../menu-options/sign-up";
 import { InitialMenuState } from "../entrypoint-state";
-import { extractValuesFromObject } from "../../helpers";
+import { extractValuesFromObject } from "../../../helpers";
 
 export const FullNameState: State = {
   menu: FULL_NAME,

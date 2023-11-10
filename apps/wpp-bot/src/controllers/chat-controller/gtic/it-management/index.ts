@@ -2,9 +2,9 @@ import {
   IT_MANAGEMENT,
   EItManagement,
   IT_MANAGEMENT_MORE_DETAILS,
-} from "../../../menu-options/gtic/it-management";
-import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
-import { extractValuesFromObject } from "../../../helpers";
+} from "../../../../menu-options/gtic/it-management";
+import { SUCCESS_ANSWER } from "../../../../menu-options/shared/success";
+import { extractValuesFromObject } from "../../../../helpers";
 import type { State } from "../../interface";
 
 const itManagementOptions = extractValuesFromObject<string>(EItManagement);

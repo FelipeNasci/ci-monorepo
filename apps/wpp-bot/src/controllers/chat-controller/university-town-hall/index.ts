@@ -7,10 +7,10 @@ import {
   PU_MAINTENANCE_DEPARTMENT,
   PU_MAINTENANCE_MORE_DETAILS,
   EMaintenanceCategoryKind,
-} from "../../menu-options/university-town-hall";
+} from "../../../menu-options/university-town-hall";
 
-import { SUCCESS_ANSWER } from "../../menu-options/shared/success";
-import { extractValuesFromObject } from "../../helpers";
+import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
+import { extractValuesFromObject } from "../../../helpers";
 
 const maintenanceCategoryOptions = extractValuesFromObject<string>(
   EMaintenanceCategoryKind

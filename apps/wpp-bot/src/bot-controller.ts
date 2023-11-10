@@ -1,5 +1,5 @@
-import { FullNameState } from "./chat/sign-up";
-import { State } from "./chat/interface";
+import { FullNameState } from "./controllers/chat-controller/sign-up";
+import { State } from "./controllers/chat-controller/interface";
 import { generateMenu } from "./helpers";
 import {
   wrongAnswerMessage,

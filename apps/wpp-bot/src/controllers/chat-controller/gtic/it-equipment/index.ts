@@ -7,9 +7,9 @@ import {
   EEquipmentType,
   EQUIPMENT_SERVICE_KIND,
   EEquipmentServiceType,
-} from "../../../menu-options/gtic/it-equipment";
-import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
-import { extractValuesFromObject } from "../../../helpers";
+} from "../../../../menu-options/gtic/it-equipment";
+import { SUCCESS_ANSWER } from "../../../../menu-options/shared/success";
+import { extractValuesFromObject } from "../../../../helpers";
 import type { State } from "../../interface";
 
 const equipments = extractValuesFromObject<string>(EEquipmentType);

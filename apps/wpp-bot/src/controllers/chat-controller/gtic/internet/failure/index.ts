@@ -3,10 +3,8 @@ import {
   BLOCK_FAILURE_INTERNET_ACCESS,
   HALL_FAILURE_INTERNET_ACCESS,
   MORE_DETAILS_FAILURE_INTERNET_ACCESS,
-} from "../../../../menu-options/gtic/internet/failure";
-import {
-  SUCCESS_ANSWER
-} from "../../../../menu-options/shared/success";
+} from "../../../../../menu-options/gtic/internet/failure";
+import { SUCCESS_ANSWER } from "../../../../../menu-options/shared/success";
 
 export const FailureInternetBlockState: State = {
   menu: BLOCK_FAILURE_INTERNET_ACCESS,

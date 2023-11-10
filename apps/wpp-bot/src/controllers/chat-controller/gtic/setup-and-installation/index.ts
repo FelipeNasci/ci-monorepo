@@ -5,9 +5,9 @@ import {
   SETUP_EQUIPMENT_HALL_LOCATION,
   SETUP_EQUIPMENT_MORE_DETAILS,
   ESetupAndInstallationKind,
-} from "../../../menu-options/gtic/sertup-and-installation";
-import { SUCCESS_ANSWER } from "../../../menu-options/shared/success";
-import { extractValuesFromObject } from "../../../helpers";
+} from "../../../../menu-options/gtic/sertup-and-installation";
+import { SUCCESS_ANSWER } from "../../../../menu-options/shared/success";
+import { extractValuesFromObject } from "../../../../helpers";
 import type { State } from "../../interface";
 
 const installationsKind = extractValuesFromObject<string>(

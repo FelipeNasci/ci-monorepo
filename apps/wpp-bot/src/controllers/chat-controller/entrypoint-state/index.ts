@@ -1,5 +1,8 @@
 import { State } from "../interface";
-import { ENTRYPOINT_MENU_OPTIONS, EntrypointOptions } from "../../menu-options";
+import {
+  ENTRYPOINT_MENU_OPTIONS,
+  EntrypointOptions,
+} from "../../../menu-options";
 import { GticMenuOptionsState } from "../gtic";
 import { AsconMenuOptionsState } from "../ascon";
 import { AdministrativeConsultancyMenuOptionsState } from "../administrative-consultancy";
