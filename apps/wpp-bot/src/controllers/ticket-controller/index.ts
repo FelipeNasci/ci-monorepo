@@ -1,5 +1,5 @@
-import { Ticket } from "../services/tickets";
-import { TicketDestination } from "../domain";
+import { Ticket } from "../../services/tickets";
+import { TicketDestination } from "../../domain";
 
 const create = async ({ destination, ...ticket }: any) => {
   const ticketService = getTicketServiceInstance(destination);
@@ -10,7 +10,8 @@ const getTicketServiceInstance = (destination: string) => {
   const mapTicketsService = {
     [TicketDestination.Gtic]: Ticket.Gtic,
     [TicketDestination.Ascon]: Ticket.Ascon,
-    [TicketDestination.AdministrativeConsultancy]: Ticket.AdministrativeConsultancy,
+    [TicketDestination.AdministrativeConsultancy]:
+      Ticket.AdministrativeConsultancy,
     [TicketDestination.UniversityTownHall]: Ticket.UniversityTownHall,
   };
 
