@@ -9,11 +9,12 @@ import {
 import { inputListener } from "./helpers/input-listeners";
 import { getAllowedMenu, isAllowedOption } from "./helpers/user-permissions";
 import { TicketController } from "./controllers/ticket-controller";
-import ExpireMap from "expiry-map";
 import { time } from "../config";
 import { Actions, ActiveUsers, ChatUser, Request } from "./domain";
 
-const activeUsers = new ExpireMap<string, ActiveUsers>(time);
+import { InMemoryDatabase } from "./services/database/in-memory";
+
+const activeUsers = new InMemoryDatabase({ time });
 
 const handleInitialPayload = (user: ChatUser) => {
   const state = FullNameState;
