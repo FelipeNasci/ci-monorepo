@@ -1,5 +1,5 @@
 import whatsappMessages from "./services/whatsapp-messages";
-import { botController } from "./bot-controller";
+import { botController } from "./controllers/bot-controller";
 
 function sendMessage(client, sendTo, text: string) {
   client

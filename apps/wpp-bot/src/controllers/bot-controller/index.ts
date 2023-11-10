@@ -1,23 +1,26 @@
-import { FullNameState } from "./controllers/chat-controller/sign-up";
-import { State } from "./controllers/chat-controller/interface";
-import { generateMenu } from "./helpers";
+import { FullNameState as InitialState } from "../chat-controller/sign-up";
+import { State } from "../chat-controller/interface";
+import { generateMenu } from "../../helpers";
 import {
   wrongAnswerMessage,
   exitMessage,
   welcomeToChatMessage,
-} from "./helpers/messages";
-import { inputListener } from "./helpers/input-listeners";
-import { getAllowedMenu, isAllowedOption } from "./helpers/user-permissions";
-import { TicketController } from "./controllers/ticket-controller";
-import { time } from "../config";
-import { Actions, ActiveUsers, ChatUser, Request } from "./domain";
+} from "../../helpers/messages";
+import { inputListener } from "../../helpers/input-listeners";
+import {
+  getAllowedMenu,
+  isAllowedOption,
+} from "../../helpers/user-permissions";
+import { TicketController } from "../ticket-controller";
+import { time } from "../../../config";
+import { Actions, ActiveUsers, ChatUser, Request } from "../../domain";
 
-import { InMemoryDatabase } from "./services/database/in-memory";
+import { InMemoryDatabase } from "../../services/database/in-memory";
 
 const activeUsers = new InMemoryDatabase({ time });
 
 const handleInitialPayload = (user: ChatUser) => {
-  const state = FullNameState;
+  const state = InitialState;
   const payload = {
     createdAt: new Date(),
     request: {},

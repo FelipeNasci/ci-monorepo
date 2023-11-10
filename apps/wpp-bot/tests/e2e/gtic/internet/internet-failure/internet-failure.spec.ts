@@ -1,4 +1,4 @@
-import { botController } from "../../../../../src/bot-controller";
+import { botController } from "../../../../../src/controllers/bot-controller";
 import { gticMock, phoneNumberMock } from "./mocks";
 
 enum Choice {
