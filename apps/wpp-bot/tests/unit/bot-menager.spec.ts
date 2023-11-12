@@ -1,4 +1,4 @@
-import { botController } from "../../src/bot-controller";
+import { botController } from "../../src/controllers/bot-controller";
 
 describe("BotManager", () => {
   it("should be defined", () => {

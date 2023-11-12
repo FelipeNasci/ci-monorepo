@@ -1,13 +1,13 @@
-import { ENTRYPOINT_MENU_OPTIONS } from "../../../../../src/menu-options";
-import { GTIC } from "../../../../../src/menu-options/gtic";
-import { SUCCESS_ANSWER } from "../../../../../src/menu-options/shared/success";
-import { INTERNET_ACCESS_KIND } from "../../../../../src/menu-options/gtic/internet";
+import { ENTRYPOINT_MENU_OPTIONS } from "../../../../../src/domain/menu-options";
+import { GTIC } from "../../../../../src/domain/menu-options/gtic";
+import { SUCCESS_ANSWER } from "../../../../../src/domain/menu-options/shared/success";
+import { INTERNET_ACCESS_KIND } from "../../../../../src/domain/menu-options/gtic/internet";
 import {
   BLOCK_FAILURE_INTERNET_ACCESS,
   HALL_FAILURE_INTERNET_ACCESS,
   MORE_DETAILS_FAILURE_INTERNET_ACCESS,
-} from "../../../../../src/menu-options/gtic/internet/failure";
-import { SETUP_WIFI } from "../../../../../src/menu-options/gtic/internet/setup-wifi";
+} from "../../../../../src/domain/menu-options/gtic/internet/failure";
+import { SETUP_WIFI } from "../../../../../src/domain/menu-options/gtic/internet/setup-wifi";
 
 import { generateMenu } from "../../../../../src/helpers";
 

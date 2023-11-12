@@ -1,4 +1,9 @@
-import { FULL_NAME, LOCATION, EMAIL, USER_TYPE } from '../../../src/menu-options/sign-up'
+import {
+  FULL_NAME,
+  LOCATION,
+  EMAIL,
+  USER_TYPE,
+} from "../../../src/domain/menu-options/sign-up";
 import { generateMenu } from "../../../src/helpers";
 import { welcomeToChatMessage } from "../../../src/helpers/messages";
 

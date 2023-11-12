@@ -1,4 +1,4 @@
-import { EGticOptions, GTIC } from "../../menu-options/gtic";
+import { EGticOptions, GTIC } from "../../domain/menu-options/gtic";
 
 export const otherPermissions = {
   denied: {

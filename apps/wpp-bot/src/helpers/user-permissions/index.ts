@@ -1,5 +1,5 @@
-import { State } from "../../chat/interface";
-import { EUserType, USER_TYPE } from "../../menu-options/sign-up";
+import { State } from "../../controllers/chat-controller/interface";
+import { EUserType, USER_TYPE } from "../../domain/menu-options/sign-up";
 import { otherPermissions } from "./other";
 import { studentPermissions } from "./student";
 
@@ -32,7 +32,7 @@ export const getAllowedMenu = (
   { menu }: State
 ) => {
   const deniedList = permissions[userType]?.denied[routeName];
-  
+
   if (!deniedList) return;
 
   const allowedMenu = Object.entries(menu.options)

@@ -1,4 +1,4 @@
-import { State } from "../chat/interface";
+import { State } from "../controllers/chat-controller/interface";
 
 export enum Actions {
   goBack = "voltar",

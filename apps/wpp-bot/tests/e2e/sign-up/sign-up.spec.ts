@@ -1,4 +1,4 @@
-import { botController } from "../../../src/bot-controller";
+import { botController } from "../../../src/controllers/bot-controller";
 import { signUpMock, phoneNumberMock, actionsMock } from "./mocks";
 
 enum ChatAction {
