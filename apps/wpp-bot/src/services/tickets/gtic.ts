@@ -13,7 +13,7 @@ export class GticTicket implements Ticket {
 
     const html = Object.entries(data)
       .map(([key, value]) => `<b>${key}</b>: ${value}`)
-      .join("</br>");
+      .join("<br/>");
 
     const subject = `${data.unidade} - ${data.servico} - ${data.tipoServico}`;
     const to = ticketConfig.gtic.email;
