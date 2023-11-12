@@ -13,7 +13,7 @@ export class AsconTicket implements Ticket {
 
     const html = Object.entries(data)
       .map(([key, value]) => `<b>${key}</b>: ${value}`)
-      .join("</br>");
+      .join("<br/>");
 
     const subject = `Solicitação ${data.name} ${data.unidade}`;
     const to = ticketConfig.ascon.email;
