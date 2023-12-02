@@ -42,7 +42,6 @@ export const puMaintenanceRegisterNumberState: State = {
 export const puMaintenanceDepartmentPhoneState: State = {
   menu: PU_DEPARTMENT_PHONE_REQUESTER,
   next: (_, ticket) => {
-    console.log({ ticket });
     if (ticket?.unidade === LOCATION.options[ELocation.RTT])
       return puMaintenanceDepartmentRttState;
     return puMaintenanceDepartmentMmeState;
