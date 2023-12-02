@@ -169,10 +169,10 @@ export const mapInputToOptions = (className: string, input: string) => {
       return { maintenanceDepartment: input };
 
     case getClassName(PU_MAINTENANCE_DEPARTMENT_RTT):
-      return { maintenanceDepartment: PU_MAINTENANCE_DEPARTMENT_RTT[input] };
+      return { maintenanceDepartmentLocation: PU_MAINTENANCE_DEPARTMENT_RTT[input] };
 
     case getClassName(PU_MAINTENANCE_DEPARTMENT_MME):
-      return { maintenanceDepartment: PU_MAINTENANCE_DEPARTMENT_MME[input] };
+      return { maintenanceDepartmentLocation: PU_MAINTENANCE_DEPARTMENT_MME[input] };
 
     case getClassName(PU_MAINTENANCE_CATEGORY):
       return { tipoServico: PU_MAINTENANCE_CATEGORY.options[input] };
