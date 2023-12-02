@@ -124,7 +124,7 @@ export function botController(user: ChatUser): string {
       const options = getAllowedMenu(
         nextState.menu.className,
         userType,
-        activeUser.payload.currentState.next(choice)
+        activeUser.payload.currentState.next(choice, request)
       );
 
       if (options) {

@@ -51,6 +51,8 @@ import {
   PU_REGISTER_NUMBER_REQUESTER,
   PU_DEPARTMENT_PHONE_REQUESTER,
   PU_MAINTENANCE_DEPARTMENT,
+  PU_MAINTENANCE_DEPARTMENT_MME,
+  PU_MAINTENANCE_DEPARTMENT_RTT,
   PU_MAINTENANCE_CATEGORY,
   PU_MAINTENANCE_MORE_DETAILS,
 } from "../../domain/menu-options/university-town-hall";
@@ -165,6 +167,12 @@ export const mapInputToOptions = (className: string, input: string) => {
 
     case getClassName(PU_MAINTENANCE_DEPARTMENT):
       return { maintenanceDepartment: input };
+
+    case getClassName(PU_MAINTENANCE_DEPARTMENT_RTT):
+      return { maintenanceDepartment: PU_MAINTENANCE_DEPARTMENT_RTT[input] };
+
+    case getClassName(PU_MAINTENANCE_DEPARTMENT_MME):
+      return { maintenanceDepartment: PU_MAINTENANCE_DEPARTMENT_MME[input] };
 
     case getClassName(PU_MAINTENANCE_CATEGORY):
       return { tipoServico: PU_MAINTENANCE_CATEGORY.options[input] };
